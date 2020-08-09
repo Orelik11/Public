@@ -4,11 +4,7 @@
     <title>title1</title>
 </head>
 <body>
-    <form role="form" action="" method="post">
-        {% csrf_token %}
         <input type="submit" class="btn" value="Click" name="mybtn">
-    </form>
-
 
     {% for post in posts %}
         <h1>{{ post.title }}</h1>
@@ -27,12 +23,9 @@
         {% for process in processes %}
             <tr>
                 <th>{{ process.PROCESS }}
-                    <form role="form" action="" method="post">
-                        {% csrf_token %}
                         <input type="submit" class="btn" value="Start {{ process.PROCESS }}" name="Start">
                         <input type="submit" class="btn" value="Stop {{ process.PROCESS }}" name="Stop">
                         <input type="submit" class="btn" value="Reload {{ process.PROCESS }}" name="Reload">
-                    </form>
                 </th>
                 <th>{{ process.LOAD }}</th>
                 <th>{{ process.ACTIVE }}</th>
